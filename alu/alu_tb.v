@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-
+//testbench of alu
 module alu_tb;
     parameter width = 4;
 
@@ -51,3 +51,4 @@ module alu_tb;
     end
 
 endmodule
+
