@@ -47,11 +47,10 @@ This project demonstrates practical knowledge of **Digital Logic Design, RTL Des
 ---
 
 ## Project Structure
-
--Alu_top.v
--Arthimetic.v
--logical_shift.v
--alu_tb.v
+- Alu_top.v
+- Arthimetic.v
+- logical_shift.v
+- alu_tb.v
 
 
 ---
