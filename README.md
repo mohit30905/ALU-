@@ -48,13 +48,10 @@ This project demonstrates practical knowledge of **Digital Logic Design, RTL Des
 
 ## Project Structure
 
-Alu.v
-addition.v
-subtraction.v
-logical_operations.v
-shift_operations.v
-full_adder.v
-alu_tb.v
+-Alu_top.v
+-Arthimetic.v
+-logical_shift.v
+-alu_tb.v
 
 
 ---
