@@ -86,6 +86,8 @@ The ALU width can be changed by modifying the `width` parameter:
 7. Run:  
    **Run Simulation → Run Behavioral Simulation**
 8. Observe outputs and flags in the waveform window
+9. Click Open Elaborated Design  - it does RTL synthesis
+10. Run Synthesis
 
 ---
 
