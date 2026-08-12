@@ -98,6 +98,66 @@ The ALU width can be changed by modifying the `width` parameter:
 
 ---
 
+## PPA Analysis
+
+The parameterized ALU was synthesized in **Xilinx Vivado** to evaluate implementation-level **Performance, Power, and Area (PPA)** characteristics.
+
+The analysis flow was:
+
+**Verilog RTL → Functional Simulation → Synthesis → Resource Utilization → Timing Analysis → Power Estimation**
+
+### 4-bit ALU Baseline
+
+| Metric | Result |
+|--------|-------:|
+| CLB LUTs | 43 |
+| F7 MUXes | 3 |
+| Bonded IOBs | 20 |
+| Worst Timing Path | `A[2] → flags[0]` |
+| Critical Path Delay | 5.017 ns |
+| Logic Delay | 2.658 ns |
+| Net Delay | 2.359 ns |
+| Logic Levels | 8 |
+| WNS | 4.958 ns |
+| TNS | 0 ns |
+| Estimated Total On-Chip Power | 0.221 W |
+
+### Timing Analysis
+
+The worst-case timing path was observed from `A[2]` to `flags[0]`, corresponding to the carry/borrow output.
+
+The reported critical-path delay was **5.017 ns**, consisting of:
+
+- Logic delay: **2.658 ns**
+- Net delay: **2.359 ns**
+- Logic levels: **8**
+
+The design achieved **0 ns TNS** under the applied timing constraints.
+
+### Power Analysis
+
+Vivado estimated a total on-chip power of **0.221 W** for the synthesized design.
+
+The reported power estimate had a **low confidence level** and was dominated by FPGA device static power. Therefore, this value is treated as an early implementation estimate rather than measured ALU power.
+
+### Design-Space Exploration
+
+The ALU is parameterized by data width, allowing different configurations to be synthesized and compared.
+
+Initial configurations evaluated:
+
+- 4-bit ALU
+- 8-bit ALU
+
+The objective is to study how datapath width affects:
+
+- Logic resource utilization
+- Critical-path delay
+- Power estimation
+- Hardware implementation trade-offs
+
+---
+
 ## Learning Outcomes
 - Understanding of ALU architecture and RTL design
 - Clear distinction between carry and borrow in subtraction
